@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>")
+
+    }
+
+    function mostra(frase) {
+
+        document.write(frase)
+        pulaLinha()
+
+    }
+
+
+    var idadeTemFilho = 28
+    var anoChegaram = 1500
+    var anoAtual = 2022
+    var mediaIdade = anoAtual - anoChegaram / idadeTemFilho
+
+    mostra("A quantidade de gerações é " + Math.round(mediaIdade))
+</script>
