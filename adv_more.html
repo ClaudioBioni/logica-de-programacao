@@ -1,11 +1,48 @@
 <meta charset="UTF">
 
 <input/>
-<button>Compare com o meu segredo</button>
+<button>Clique se for Corno</button>
 
 <script>
 
-    var segredo = Math.round(Math.random()* 10);
+    function sorteia() {
+
+        return Math.round(Math.random() * 10);
+    }
+
+    function sorteiaNumeros(quantidade) {
+
+        var segredos = [];
+
+        var numero = 1;
+
+        while(numero <= quantidade) {
+
+            var numeroAleatorio = sorteia();
+            var achou = false;
+
+                if (numeroAleatorio !== 0) {
+
+                    var achou = false;
+
+                    for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+                        if (segredos[posicao] == numeroAleatorio) {
+                            achou = true;
+                            break;
+                        }
+                    }
+                    if (achou ==  false) {
+                        
+                        segredos.push(numeroAleatorio);
+                        numero++;
+                    }
+                }
+            }
+        return segredos;
+    }
+
+    var segredos = sorteiaNumeros(3);
     
     var input = document.querySelector("input");
     input.focus()
